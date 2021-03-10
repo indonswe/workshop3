@@ -4,30 +4,34 @@ package models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 public class AppUser {
     @Id
-    @GeneratedValue(strategy = generatorType.IDENTITY)
-    private String userId;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int appUserId;
     @Column(unique = true)
     private String username;
-
     private String password;
     private LocalDate regDate;
-    @onetoone(cascase =cascadetype.all)
-    @joincolumn (name = "details.id", table = "app.user")
-privare detalis userDetails
-    private String role;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn (name = "details.id", table = "app.user")
+    private Details userDetails;
+    //private String role;
 
-    public AppUser(String userId, String username, String password, String role) {
+
+    public AppUser(int appUserId, String username, String password, LocalDate regDate, Details userDetails) {
+        this.appUserId = appUserId;
+        this.username = username;
+        this.password = password;
+        this.regDate = regDate;
+        this.userDetails = userDetails;
+    }
+
+    public AppUser(int appUserId, String username, String password, String role) {
         this.userId = userId;
         this.username = username;
         this.password = password;
