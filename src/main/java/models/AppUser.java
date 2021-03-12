@@ -18,7 +18,7 @@ public class AppUser {
     private String password;
     private LocalDate regDate;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn (name = "details.id", table = "app.user")
+    @JoinColumn(name = "details_id", table = "app_user")
     private Details userDetails;
     //private String role;
 
@@ -31,19 +31,16 @@ public class AppUser {
         this.userDetails = userDetails;
     }
 
-    public AppUser(int appUserId, String username, String password, String role) {
-        this.userId = userId;
-        this.username = username;
-        this.password = password;
-        this.birthDate = birthDate;
-        this.role
-    }
-
-    public String getUserId() {
-        return userId;
-    }
 
     public AppUser() {
+    }
+
+    public int getAppUserId() {
+        return appUserId;
+    }
+
+    public void setAppUserId(int appUserId) {
+        this.appUserId = appUserId;
     }
 
     public String getUsername() {
@@ -62,31 +59,19 @@ public class AppUser {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public LocalDate getRegDate() {
+        return regDate;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRegDate(LocalDate regDate) {
+        this.regDate = regDate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AppUser appUser = (AppUser) o;
-        return Objects.equals(userId, appUser.userId) && Objects.equals(username, appUser.username);
+    public Details getUserDetails() {
+        return userDetails;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(userId, username);
-    }
-
-    @Override
-    public String toString() {
-        return "AppUser{" +
-                "userId='" + userId + '\'' +
-                '}';
+    public void setUserDetails(Details userDetails) {
+        this.userDetails = userDetails;
     }
 }
