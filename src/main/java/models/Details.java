@@ -26,6 +26,9 @@ public class  Details {
         this.birthDate = birthDate;
     }
 
+    public Details() {
+    }
+
     public int getDetailsId() {
         return detailsId;
     }

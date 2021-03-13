@@ -1,16 +1,16 @@
 package Data;
 
+
 import models.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import javax.persistence.EntityManager;
 import java.util.Collection;
 
 @Repository
-public class StudentRepository implements se.lexicon.crud_demo.data.StudentDAO {
+public class StudentRepository implements StudentDAO{
 
     private final EntityManager em;
 
