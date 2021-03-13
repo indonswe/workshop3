@@ -14,10 +14,10 @@ public interface AppUserDAO {
     }*/
 
        AppUser create(AppUser appUser);
-       Student findById(Integer studentId);
-       Collection<Student> findAll();
-       Student update(Student student);
-       boolean delete(Integer studentId);
+       AppUser findById(Integer appUserID);
+       Collection<AppUser> findAll();
+       AppUser update(AppUser appUser);
+       void delete(Integer appUser);
 
 
 }

@@ -1,4 +1,4 @@
-package Data;
+/*package Data;
 
 import models.AppUser;
 import models.Details;
@@ -28,7 +28,7 @@ public class DetailsDAORepository implements DetailsDAO {
     @Override
     @Transactional(readOnly = true)
     public Collection<AppUser> findAll() {
-        return em.createQuery("Select user From AppUser user" AppUser.class)
+        return em.createQuery("Select user From AppUser user", AppUser.class)
                 .getResultList();
     }
     @Override
@@ -42,7 +42,7 @@ public class DetailsDAORepository implements DetailsDAO {
     public AppUser update(AppUser appUser){
         return em.merge(appUser);
     }
-    @Override
+    /*@Override
     @Transactional
     public void delete(Integer integer){
         AppUser appUser = findById(integer);
@@ -51,5 +51,6 @@ public class DetailsDAORepository implements DetailsDAO {
         }
     }
 }
+*/
 
 
