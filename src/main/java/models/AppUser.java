@@ -17,8 +17,8 @@ public class AppUser {
     private String username;
     private String password;
     private LocalDate regDate;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "details_id", table = "app_user")
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "details_id", table = "app_user")
     private Details userDetails;
     //private String role;
 
